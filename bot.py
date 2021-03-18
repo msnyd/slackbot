@@ -17,7 +17,7 @@ def home_view():
 
 
 slack_event_adapter = SlackEventAdapter(
-    os.environ['e214828a4ff64fc68a3c34eb28c6bc1f'], '/slack/events', app)
+    'e214828a4ff64fc68a3c34eb28c6bc1f', '/slack/events', app)
 
 client = slack.WebClient(token=os.environ['SLACK_TOKEN'])
 BOT_ID = client.api_call('auth.test')['user_id']
