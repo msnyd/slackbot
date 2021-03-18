@@ -9,13 +9,13 @@ import json
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
+app = Flask(__name__)
 
 @app.route("/") 
 def home_view(): 
         return "<h1>Bot Running</h1>"
 
 
-app = Flask(__name__)
 slack_event_adapter = SlackEventAdapter(
     os.environ['SIGNING_SECRET'], '/slack/events', app)
 
